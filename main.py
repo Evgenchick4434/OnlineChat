@@ -28,9 +28,9 @@ async def main():
     nickname = await input("Join chat", required=True, placeholder="Your name",
                            validate=lambda n: "This nickname is already in use." if n in online_users or n == '📢' else None)
     online_users.add(nickname)
-
+    None
     key = await input("ENTER KEY", required=True, placeholder="secret authorization key",
-                           validate=lambda n: None if n == access_key else stop)
+                           validate=lambda n: None if n == access_key else "The key is wrong")
     put_markdown('You entered key succesfully. Enjoy free & secure messaging!')
     put_markdown(f'Now online: {online_users}')
     msg_box = output()
